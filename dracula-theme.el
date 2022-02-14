@@ -83,18 +83,19 @@ read it before opening a new issue about your will.")
                 (dracula-current "#44475a" "#303030" "brightblack") ; official current-line/selection
                 (dracula-comment "#6272a4" "#5f5faf" "blue")        ; official comment
                 (dracula-cyan    "#8be9fd" "#87d7ff" "brightcyan")  ; official cyan
-                (dracula-green   "#50fa7b" "#5fff87" "green")       ; official green
+                (dracula-green   "#50fa7b" "#5BB8E3" "green")       ; official green
                 (dracula-orange  "#ffb86c" "#ffaf5f" "brightred")   ; official orange
                 (dracula-pink    "#ff79c6" "#ff87d7" "magenta")     ; official pink
                 (dracula-purple  "#bd93f9" "#af87ff" "brightmagenta") ; official purple
                 (dracula-red     "#ff5555" "#ff8787" "red")         ; official red
-                (dracula-yellow  "#f1fa8c" "#ffff87" "yellow")      ; official yellow
+                (dracula-yellow  "#FDC085" "#3CD1AA" "yellow")      ; official yellow
                 ;; Other colors
-                (bg2             "#373844" "#121212" "brightblack")
-                (bg3             "#464752" "#262626" "brightblack")
+                (bg2             "#373844" "#292B2E" "brightblack")
+                (bg3             "#464752" "#3CD1AA" "brightblack")  ; ryang from #262626 -> 3CD1AA
                 (bg4             "#565761" "#444444" "brightblack")
+                (bg5             "#373844" "#e4e4e4" "brightblack")
                 (fg2             "#e2e2dc" "#e4e4e4" "brightwhite")
-                (fg3             "#ccccc7" "#c6c6c6" "white")
+                (fg3             "#ccccc7" "#292b2e" "white")        ; ryang from ? -> #292b2e
                 (fg4             "#b6b6b2" "#b2b2b2" "white")
                 (other-blue      "#0189cc" "#0087ff" "brightblue")))
       (faces '(;; default
@@ -108,7 +109,7 @@ read it before opening a new issue about your will.")
                (hl-line :background ,dracula-current :extend t)
                (info-quoted-name :foreground ,dracula-orange)
                (info-string :foreground ,dracula-yellow)
-               (lazy-highlight :foreground ,fg2 :background ,bg2)
+               (lazy-highlight :foreground ,fg3 :background ,bg3)
                (link :foreground ,dracula-cyan :underline t)
                (linum :slant italic :foreground ,bg4 :background ,dracula-bg)
                (line-number :slant italic :foreground ,bg4 :background ,dracula-bg)
@@ -120,7 +121,7 @@ read it before opening a new issue about your will.")
                (read-multiple-choice-face :inherit completions-first-difference)
                (region :inherit match :extend t)
                (trailing-whitespace :foreground "unspecified-fg" :background ,dracula-orange)
-               (vertical-border :foreground ,bg2)
+               (vertical-border :foreground ,bg5)
                (success :foreground ,dracula-green)
                (warning :foreground ,dracula-orange)
                (error :foreground ,dracula-red)
@@ -385,7 +386,7 @@ read it before opening a new issue about your will.")
                (js3-jsdoc-tag-face :foreground ,dracula-pink)
                (js3-warning-face :underline ,dracula-pink)
                ;; lsp
-               (lsp-ui-peek-peek :background ,dracula-bg)
+               (lsp-ui-peek-peek :background ,bg2)
                (lsp-ui-peek-list :background ,bg2)
                (lsp-ui-peek-filename :foreground ,dracula-pink :weight bold)
                (lsp-ui-peek-line-number :foreground ,dracula-fg)
@@ -486,7 +487,7 @@ read it before opening a new issue about your will.")
                (mode-line :background ,dracula-current
                           :box ,dracula-current :inverse-video nil
                           ,@(if dracula-alternate-mode-line-and-minibuffer
-                                (list :foreground fg3)
+                                (list :foreground dracula-yellow)
                               (list :foreground "unspecified-fg")))
                (mode-line-inactive
                 :inverse-video nil
